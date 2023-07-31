@@ -7,7 +7,11 @@ const dotenv = require("dotenv");
 
 dotenv.config();
 
-app.use(cors());
+app.use(
+  cors({
+    origin: "*",
+  })
+);
 app.use(bodyParser.json());
 app.get("/", (req, res) => {
   res.json({
